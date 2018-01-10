@@ -1,0 +1,10 @@
+
+#action: ele_action: {"method": "id", "value": "com.ss.android.ugc.live:id/shot", "action": "click", "param": null}
+#action: ele_action: {"method": "parent_id", "value": "android:id/tabs", "child": 3, "action": "click", "param": null}
+
+#action: sys_action: {"method": "press_back"}
+#action: ele_action: {"method": "parent_id", "value": "android:id/tabs", "child": 0, "action": "click", "param": null}
+#action: ele_action: {"method": "text", "value": "直播", "action": "click", "param": null}
+#action: ele_action: {"method": "parent_id", "value": "com.ss.android.ugc.live:id/feed_list", "child":"1", "action": "click", "param": null}
+action: ele_action: {"method": "parent_id", "value": "com.ss.android.ugc.live:id/pager_sliding_tab_strip", "child":"0,0", "action": "click", "param": null}
+action: sys_action: {"method": "slip"}

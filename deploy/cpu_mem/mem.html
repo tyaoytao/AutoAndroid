@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>mem</title>
+<script type="text/javascript" src="./jscharts.js"></script>
+</head>
+<body>
+<div id="graph">Loading graph...</div>
+<script type="text/javascript">
+var myChart = new JSChart('graph', 'line');
+myChart.setShowXValues(true);
+myChart.setTitle('BLUE: --Native        Green: --Dalvik');
+myChart.setTitleColor('#454545');
+myChart.setLineColor('#426ab3', 'blue');
+myChart.setLineColor('#7fb80e', 'green');
+myChart.setSize(window.innerWidth-50, window.innerHeight/1.4);
+myChart.draw();
+console.log("sdf")
+function myrefresh()
+{
+	window.location.reload();
+	console.log("sdf") 
+}
+ setTimeout('myrefresh()',3000); //指定1秒刷新一次
+</script>
+</body>
+</html>
