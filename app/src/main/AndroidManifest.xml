@@ -5,6 +5,12 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <instrumentation
+        android:label="Tests for com.ss.ugc.android.autoandroid"
+        android:name="android.support.test.runner.AndroidJUnitRunner"
+        android:targetPackage="com.ss.ugc.android.autoandroid"
+        android:handleProfiling="false"
+        android:functionalTest="false" />
 
     <application
         android:allowBackup="true"
@@ -13,10 +19,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <uses-library
+            android:name="android.test.runner" />
         <activity
-            android:name=".MainActivity">
-
+            android:name=".MainActivity"
+            android:label="@string/request_permission"
+            android:theme="@style/Translucent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

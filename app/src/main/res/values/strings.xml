@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">autoandroid</string>
+    <string name="app_name">Android自动化工具</string>
+    <string name="request_permission">申请权限</string>
 </resources>
