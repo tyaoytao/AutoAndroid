@@ -3,6 +3,7 @@
 apkname=$1
 delay=$2
 
+
 device_num=`adb devices | grep "device"$ | wc -l`
 for ((j=1;j<=$device_num;j++));
     do
