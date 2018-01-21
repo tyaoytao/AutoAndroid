@@ -23,7 +23,7 @@ public class SequenceParser {
 
     private static class ConfigBean {
         String type;
-        String name;
+        String label;
         String params;
 
         public boolean isAction() {
@@ -51,9 +51,9 @@ public class SequenceParser {
                     continue;
                 }
                 if (configBean.isAction()) {
-                    testRunner.addAction(ActionFactory.getActionByName(configBean.name, configBean.params));
+                    testRunner.addAction(ActionFactory.getActionByName(configBean.label, configBean.params));
                 } else if (configBean.isCheckPoint()) {
-                    testRunner.addCheckPoint(CheckPointFactory.getCheckPointByName(configBean.name));
+                    testRunner.addCheckPoint(CheckPointFactory.getCheckPointByName(configBean.label, configBean.params));
                 }
             }
         } catch (FileNotFoundException e) {
@@ -83,7 +83,7 @@ public class SequenceParser {
                     params = str.substring(nameIndex + 1);
                     configBean = new ConfigBean();
                     configBean.type = type.trim();
-                    configBean.name = name.trim();
+                    configBean.label = name.trim();
                     configBean.params = params.trim();
                 }
             }

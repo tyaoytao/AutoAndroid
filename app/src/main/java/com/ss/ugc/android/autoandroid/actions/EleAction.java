@@ -42,7 +42,9 @@ public class EleAction extends AbsAction<EleAction.Argument> {
                 break;
             case "class_name":
                 break;
-            case "press":
+            case "slip":
+                break;
+            case "stay":
 
                 break;
         }
@@ -54,6 +56,7 @@ public class EleAction extends AbsAction<EleAction.Argument> {
                 element.click();
                 break;
             case "longclick":
+                //TODO
                 break;
         }
     }
@@ -66,7 +69,7 @@ public class EleAction extends AbsAction<EleAction.Argument> {
                 int child = Integer.valueOf(childString.trim());
                 childElement = childElement.getChild(new UiSelector().index(child));
             } catch (Exception e) {
-                throw new InvalidElementException("Can'tfind element for " + childString);
+                throw new InvalidElementException("Can't find element for " + childString);
             }
         }
         return childElement;

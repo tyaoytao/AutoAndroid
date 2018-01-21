@@ -19,7 +19,7 @@ public class ExampleInstrumentedTest {
     @Test
     public void checkPreconditions() throws Throwable {
         TestRunner testRunner = new TestRunner();
-        SequenceParser parser = new SequenceParser(testRunner, new File("/sdcard/test/config.txt"));
+        SequenceParser parser = new SequenceParser(testRunner, new File("/sdcard/Download/config.txt"));
         parser.parse();
         testRunner.run();
     }

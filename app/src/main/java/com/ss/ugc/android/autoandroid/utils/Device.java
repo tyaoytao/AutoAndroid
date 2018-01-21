@@ -22,17 +22,7 @@ public abstract class Device {
         getUiDevice().wakeUp();
     }
 
-    public static void scrollTo(String scrollToString) throws UiObjectNotFoundException {
-        UiScrollable uiScrollable = new UiScrollable(new UiSelector().scrollable(true).instance(0));
-        uiScrollable.scrollIntoView(new UiSelector().descriptionContains(scrollToString).instance(0));
-        uiScrollable.scrollIntoView(new UiSelector().textContains(scrollToString).instance(0));
-    }
 
-    public static void scrollDown(int maxSwipes, int step)  throws UiObjectNotFoundException {
-        getUiDevice();
-        UiScrollable uiScrollable = new UiScrollable(new UiSelector().scrollable(true).instance(0));
-        uiScrollable.flingToEnd(1);
-    }
 
     public static boolean back() {
         return getUiDevice().pressBack();
@@ -65,5 +55,13 @@ public abstract class Device {
 
     public static boolean pressHomeKey() {
         return getUiDevice().pressHome();
+    }
+
+    public static void stay(int ms) {
+        try {
+            Thread.sleep(ms);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
