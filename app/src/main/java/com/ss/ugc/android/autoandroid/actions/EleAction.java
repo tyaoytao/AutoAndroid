@@ -35,18 +35,23 @@ public class EleAction extends AbsAction<EleAction.Argument> {
                 element = Device.findElementByID(argument.value);
                 doAction(argument.action, element);
                 break;
-            case "parent_id":
-                element = Device.findElementByID(argument.value);
-                UiObject childElement = findChild(element);
-                doAction(argument.action, childElement);
+            case "text":
+                element = Device.findElementByText(argument.value);
+                doAction(argument.action, element);
                 break;
-            case "class_name":
+            case "desc":
+                element = Device.findElementByDesc(argument.value);
+                doAction(argument.action, element);
                 break;
-            case "slip":
+            case "className":
+                element = Device.findElementByClassName(argument.value);
+                doAction(argument.action, element);
                 break;
-            case "stay":
+            case "parentId":
+                element = Device.findElementByParentID(argument.value, argument.child);
+                doAction(argument.action, element);
+                break;
 
-                break;
         }
     }
 
@@ -55,23 +60,12 @@ public class EleAction extends AbsAction<EleAction.Argument> {
             case "click":
                 element.click();
                 break;
-            case "longclick":
-                //TODO
+            case "longClick":
+                element.longClick();
                 break;
+            case "clickAndWaitForNewWindow":
+                element.clickAndWaitForNewWindow(); //默认5500ms
         }
     }
 
-    private UiObject findChild(final UiObject element) throws InvalidElementException {
-        String[] childStringArray = argument.child.split(",");
-        UiObject childElement = element;
-        for (String childString : childStringArray) {
-            try {
-                int child = Integer.valueOf(childString.trim());
-                childElement = childElement.getChild(new UiSelector().index(child));
-            } catch (Exception e) {
-                throw new InvalidElementException("Can't find element for " + childString);
-            }
-        }
-        return childElement;
-    }
 }

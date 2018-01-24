@@ -18,6 +18,7 @@ public class EleExistCP extends AbsCheckPoint<EleExistCP.Argument> {
         public String method;
         public String value;
         public String child;
+        public long wait;
     }
 
     public EleExistCP(String params) {
@@ -30,37 +31,23 @@ public class EleExistCP extends AbsCheckPoint<EleExistCP.Argument> {
         UiObject element = null;
         switch (argument.method) {
             case "id":
-                element = Device.findElementByID(argument.value);
-                doCheck(element);
+                Assert.assertEquals(Device.isExistElementByID(argument.value, argument.wait), true);
                 break;
-            case "parent_id":
-                element = Device.findElementByID(argument.value);
-                UiObject childElement = findChild(element);
-                doCheck(childElement);
+            case "className":
+                Assert.assertEquals(Device.isExistElementByClassName(argument.value, argument.wait), true);
                 break;
-            case "class_name":
+            case "text":
+                Assert.assertEquals(Device.isExistElementByText(argument.value, argument.wait), true);
                 break;
+            case "desc":
+                Assert.assertEquals(Device.isExistElementByDesc(argument.value, argument.wait), true);
+                break;
+            case "parentId":
+                Assert.assertEquals(Device.isExistElementByParentID(argument.value, argument.child, argument.wait), true);
+                break;
+
         }
         return true;
     }
-
-    private void doCheck(UiObject object) {
-        Assert.assertEquals(object.exists(), true);
-    }
-
-    private UiObject findChild(final UiObject element) throws InvalidElementException {
-        String[] childStringArray = argument.child.split(",");
-        UiObject childElement = element;
-        for (String childString : childStringArray) {
-            try {
-                int child = Integer.valueOf(childString.trim());
-                childElement = childElement.getChild(new UiSelector().index(child));
-            } catch (Exception e) {
-                throw new InvalidElementException("Can'tfind element for " + childString);
-            }
-        }
-        return childElement;
-    }
-
 
 }

@@ -1,26 +1,30 @@
 #/bin/bash
 
-#安装测试应用
-adb install -r app-debug.apk
-adb install -r app-debug-androidTest.apk
+adb install -r ./AutoAndroid.apk
 
-#将配置文件push到手机里
 
-adb shell mkdir /sdcard/test/
-adb push config.txt /sdcard/test/
+adb shell am start -n com.ss.ugc.android.autoandroid/.MainActivity
+# 等待1秒，让权限申请的Activity启动并且申请权限
+sleep 1
 
-#启动火山app
+while [ `adb shell dumpsys activity top | grep GrantPermissionsActivity | wc -l` -eq 1 ]; do
+    #开始等待赋予权限
+    sleep 1
+done
+
+adb push ./config.txt /sdcard/Download/
+
 adb shell am start -n com.ss.android.ugc.live/.splash.LiveSplashActivity
+# Lunch cpu_mem
+cd cpu_mem
+if [ ! -d ./reports ]; then
+	mkdir ./reports
+fi
+cp jscharts.js ./reports
+sh ./cpu_mem.sh com.ss.android.ugc.live 1  &
+cpu_mem_pid=$!
+cd ..
 
-#启动性能监测脚本
+adb shell am instrument -w -r   -e debug false -e class com.ss.ugc.android.autoandroid.testrun.InstrumentedTest#checkPreconditions   com.ss.ugc.android.autoandroid/android.support.test.runner.AndroidJUnitRunner
 
-#cd cpu_mem
-#sh cpu_mem.sh com.ss.ugc.android.live 1  &
-#cpu_mem_pid=$!
-#cd ..
-
-
-adb shell am instrument -w -r -e class com.ss.ugc.android.autoandroid.ExampleInstrumentedTest#checkPreconditions com.ss.ugc.android.autoandroid.test/android.support.test.runner.AndroidJUnitRunner
-
-
-#kill -9 $cpu_mem_pid
+kill -9 $cpu_mem_pid

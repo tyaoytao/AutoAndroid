@@ -17,7 +17,7 @@ import java.io.File;
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
     @Test
-    public void checkPreconditions() throws Throwable {
+    public void testRun() throws Throwable {
         TestRunner testRunner = new TestRunner();
         SequenceParser parser = new SequenceParser(testRunner, new File("/sdcard/Download/config.txt"));
         parser.parse();

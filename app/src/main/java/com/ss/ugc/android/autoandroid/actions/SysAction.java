@@ -11,7 +11,7 @@ public class SysAction extends AbsAction<SysAction.Argument>{
 
     static class Argument {
         public String method;
-        public String value;
+        public int value;
     }
 
     public SysAction(String params) {
@@ -22,17 +22,17 @@ public class SysAction extends AbsAction<SysAction.Argument>{
     @Override
     public void run() throws Throwable {
         switch (argument.method) {
-            case "press_back":
+            case "pressBack":
                 Device.pressBackKey();
                 break;
-            case "press_home":
+            case "pressHome":
                 Device.pressHomeKey();
                 break;
             case "slip":
                 UiScrollUtils.scrollDown(1, 1);
                 break;
             case "stay":
-                Device.stay(Integer.valueOf(argument.value));
+                Device.stay(argument.value);
                 break;
         }
     }

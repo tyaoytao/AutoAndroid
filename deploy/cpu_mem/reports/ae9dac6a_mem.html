@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>mem</title>
+<script type="text/javascript" src="./jscharts.js"></script>
+</head>
+<body>
+<div id="graph">Loading graph...</div>
+<script type="text/javascript">
+var myChart = new JSChart('graph', 'line');
+myChart.setDataArray([ [0,16171], [1,15203], [2,17947], [3,15891], ], 'green');
+myChart.setDataArray([ [0,19527], [1,21543], [2,33359], [3,23387], ], 'blue');
+myChart.setDataArray([ [0,16171], [1,15203], [2,17947], ], 'green');
+myChart.setDataArray([ [0,19527], [1,21543], [2,33359], ], 'blue');
+myChart.setDataArray([ [0,16171], [1,15203], ], 'green');
+myChart.setDataArray([ [0,19527], [1,21543], ], 'blue');
+myChart.setDataArray([ [0,16171], ], 'green');
+myChart.setDataArray([ [0,19527], ], 'blue');
+myChart.setShowXValues(true);
+myChart.setTitle('BLUE: --Native        Green: --Dalvik');
+myChart.setTitleColor('#454545');
+myChart.setLineColor('#426ab3', 'blue');
+myChart.setLineColor('#7fb80e', 'green');
+myChart.setSize(window.innerWidth-50, window.innerHeight/1.4);
+myChart.draw();
+console.log("sdf")
+function myrefresh()
+{
+	window.location.reload();
+	console.log("sdf") 
+}
+ setTimeout('myrefresh()',3000); //指定1秒刷新一次
+</script>
+Tue Jan 23 23:43:58 CST 2018
+</body>
+</html>

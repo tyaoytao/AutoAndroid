@@ -1,7 +1,11 @@
 package com.ss.ugc.android.autoandroid.checkpoints;
 
+import android.support.test.uiautomator.UiObject;
+
 import com.google.gson.Gson;
 import com.ss.ugc.android.autoandroid.core.IRunUnit;
+
+import junit.framework.Assert;
 
 /**
  * Created by tongyao on 2018/1/5.
@@ -21,5 +25,9 @@ public abstract class AbsCheckPoint<T> implements IRunUnit {
     @Override
     public void setArgument(String argument) {
         this.argument = gson.fromJson(argument, clazz);
+    }
+
+    public void doCheck(UiObject object) {
+        Assert.assertEquals(object.exists(), true);
     }
 }
