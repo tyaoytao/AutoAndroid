@@ -19,3 +19,4 @@ captures/
 lint-report.xml
 *.apk
 *.log
+deploy/reports/
