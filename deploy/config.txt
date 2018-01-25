@@ -9,7 +9,7 @@
 #action: ele_action: {"method": "parent_id", "value": "com.ss.android.ugc.live:id/pager_sliding_tab_strip", "child":"0,0", "action": "click", "param": null}
 #action: sys_action: {"method": "slip"}
 
-action: ele_action:{}
+#action: ele_action:{}
 
 #点击首页按钮
 #action: ele_action: {"method": "parentId", "value":"android:id/tabs", "child":"0", "action": "click"}
@@ -25,16 +25,16 @@ action: ele_action:{}
 
 #下滑
 //TODO
-#action: sys_action: {"method": "slip"}
+action: sys_action: {"method": "slip"}
 
 #点击直播窗口进入直播间
-action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"3", "action":"click"}
+#action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"3", "action":"click"}
 
 #检查直播间关闭按钮是否出现
-cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+#cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
 
 #停留30s
-action: sys_action: {"method": "stay", "value": 30000}
+#action: sys_action: {"method": "stay", "value": 30000}
 
 #点击直播间的关闭按钮
-action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"click"}
+#action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"click"}
