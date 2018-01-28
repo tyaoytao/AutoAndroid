@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>cpu</title>
+<script type="text/javascript" src="./jscharts.js"></script>
+</head>
+<body>
+<div id="graph">Loading graph...</div>
+<script type="text/javascript">
+var myChart = new JSChart('graph', 'line');
+myChart.setDataArray([ [0,19], [1,1], [2,0], ], 'blue');
+myChart.setDataArray([ [0,19], [1,1], ], 'blue');
+myChart.setDataArray([ [0,19], ], 'blue');
+myChart.setDataArray([ ], 'blue');
+myChart.setShowXValues(true);
+myChart.setTitle('cpu');
+myChart.setTitleColor('#454545');
+// myChart.setLineColor('#A4D314', 'green');
+// myChart.setLineColor('#BBBBBB', 'gray');
+myChart.setSize(window.innerWidth-50, window.innerHeight/1.4);
+myChart.draw();
+console.log("sdf")
+function myrefresh()
+{
+	window.location.reload();
+	console.log("sdf")
+}
+ setTimeout('myrefresh()',3000); //指定1秒刷新一次
+</script>
+Thu Jan 25 21:00:16 CST 2018
+</body>
+</html>

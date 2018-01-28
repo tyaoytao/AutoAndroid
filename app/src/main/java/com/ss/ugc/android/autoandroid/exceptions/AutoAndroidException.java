@@ -1,7 +1,7 @@
 package com.ss.ugc.android.autoandroid.exceptions;
 
 /**
- * Created by yutao on 2018/1/24.
+ * Created by tongyao on 2018/1/24.
  */
 
 public class AutoAndroidException extends RuntimeException {

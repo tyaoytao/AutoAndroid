@@ -44,7 +44,7 @@ public class InteractionController {
     private static final int MOTION_EVENT_INJECTION_DELAY_MILLIS = 5;
 
     private InteractionController() {
-        interactionController = getField(UiDevice.class, FIELD_NAME, Device.getUiDevice());
+        interactionController = getField(UiDevice.class, FIELD_NAME, DeviceUtils.getUiDevice());
     }
 
     public static InteractionController getInstance() {
@@ -100,7 +100,7 @@ public class InteractionController {
             // become completely dependent on the speed of the system and results
             // may vary on different devices. This guarantees at minimum we have
             // a preset delay.
-            SystemClock.sleep(100);
+            SystemClock.sleep(20);
         }
         if (drag)
             SystemClock.sleep(REGULAR_CLICK_LENGTH);

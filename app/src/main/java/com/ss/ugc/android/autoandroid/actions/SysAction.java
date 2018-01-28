@@ -1,6 +1,6 @@
 package com.ss.ugc.android.autoandroid.actions;
 
-import com.ss.ugc.android.autoandroid.utils.Device;
+import com.ss.ugc.android.autoandroid.utils.DeviceUtils;
 import com.ss.ugc.android.autoandroid.utils.UiScrollUtils;
 
 /**
@@ -11,7 +11,7 @@ public class SysAction extends AbsAction<SysAction.Argument>{
 
     static class Argument {
         public String method;
-        public int value;
+        public String value;
     }
 
     public SysAction(String params) {
@@ -23,16 +23,21 @@ public class SysAction extends AbsAction<SysAction.Argument>{
     public void run() throws Throwable {
         switch (argument.method) {
             case "pressBack":
-                Device.pressBackKey();
+                DeviceUtils.pressBackKey();
                 break;
             case "pressHome":
-                Device.pressHomeKey();
+                DeviceUtils.pressHomeKey();
                 break;
-            case "slip":
-                UiScrollUtils.scrollDown(1, 1);
+            case "keyCode":
+                DeviceUtils.pressKeyCode(Integer.valueOf(argument.value));
+            case "slipDown":
+                String[] argValue = argument.value.split(",");
+                int instance = Integer.valueOf(argValue[0]);
+                float scrollRatio = Float.valueOf(argValue[1]);
+                UiScrollUtils.scrollDown(instance, scrollRatio);
                 break;
             case "stay":
-                Device.stay(argument.value);
+                DeviceUtils.stay(Integer.valueOf(argument.value));
                 break;
         }
     }

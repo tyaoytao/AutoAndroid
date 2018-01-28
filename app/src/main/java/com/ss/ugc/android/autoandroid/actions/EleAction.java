@@ -1,13 +1,9 @@
 package com.ss.ugc.android.autoandroid.actions;
 
-import android.support.annotation.Nullable;
-import android.support.test.uiautomator.UiObject;
+import android.support.test.uiautomator.UiObject2;
 import android.support.test.uiautomator.UiObjectNotFoundException;
-import android.support.test.uiautomator.UiSelector;
-import android.widget.RelativeLayout;
 
-import com.ss.ugc.android.autoandroid.exceptions.InvalidElementException;
-import com.ss.ugc.android.autoandroid.utils.Device;
+import com.ss.ugc.android.autoandroid.utils.DeviceUtils;
 
 /**
  * Created by tongyao on 2018/1/5.
@@ -29,33 +25,36 @@ public class EleAction extends AbsAction<EleAction.Argument> {
 
     @Override
     public void run() throws Exception {
-        UiObject element = null;
+        UiObject2 element = null;
         switch (argument.method) {
             case "id":
-                element = Device.findElementByID(argument.value);
+                element = DeviceUtils.findElementByID(argument.value);
                 doAction(argument.action, element);
                 break;
             case "text":
-                element = Device.findElementByText(argument.value);
+                element = DeviceUtils.findElementByText(argument.value);
                 doAction(argument.action, element);
                 break;
             case "desc":
-                element = Device.findElementByDesc(argument.value);
+                element = DeviceUtils.findElementByDesc(argument.value);
                 doAction(argument.action, element);
                 break;
             case "className":
-                element = Device.findElementByClassName(argument.value);
+                element = DeviceUtils.findElementByClassName(argument.value);
                 doAction(argument.action, element);
                 break;
             case "parentId":
-                element = Device.findElementByParentID(argument.value, argument.child);
+                element = DeviceUtils.findElementByParentID(argument.value, argument.child);
                 doAction(argument.action, element);
                 break;
 
         }
     }
 
-    private void doAction(String action, UiObject element) throws UiObjectNotFoundException {
+    private void doAction(String action, UiObject2 element) throws UiObjectNotFoundException {
+        if (element == null) {
+            throw new UiObjectNotFoundException("element not exist");
+        }
         switch (action) {
             case "click":
                 element.click();
@@ -64,7 +63,7 @@ public class EleAction extends AbsAction<EleAction.Argument> {
                 element.longClick();
                 break;
             case "clickAndWaitForNewWindow":
-                element.clickAndWaitForNewWindow(); //默认5500ms
+//                element.clickAndWaitForNewWindow(); //默认5500ms
         }
     }
 

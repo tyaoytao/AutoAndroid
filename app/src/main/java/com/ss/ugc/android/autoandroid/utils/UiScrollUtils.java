@@ -15,6 +15,11 @@ import static com.ss.ugc.android.autoandroid.utils.ReflectionUtils.method;
  */
 
 public class UiScrollUtils {
+    private static final int SCROLL_THRESHOLD = 8; // Must lager than 2
+    private static final float SCROLL_DISTANCE_RATIO = 1f - (1f / SCROLL_THRESHOLD) * 2f;
+    static {
+        DeviceUtils.getUiDevice();
+    }
 
     public static void scrollTo(String scrollToString) throws UiObjectNotFoundException {
         UiScrollable uiScrollable = new UiScrollable(new UiSelector().scrollable(true).instance(0));
@@ -22,28 +27,30 @@ public class UiScrollUtils {
         uiScrollable.scrollIntoView(new UiSelector().textContains(scrollToString).instance(0));
     }
 
-    public static void scrollDown(int maxSwipes, int step) throws UiObjectNotFoundException {
-        Device.getUiDevice();
-        UiScrollable uiScrollable = new UiScrollable(new UiSelector().scrollable(true).instance(2));
-//                uiScrollable.flingToEnd(1);
-//
+    public static void scrollDown(int instance, float scrollScreenRatio) throws UiObjectNotFoundException {
+        // uiScrollable.flingToEnd(1);
+        UiScrollable uiScrollable = new UiScrollable(new UiSelector().scrollable(true).instance(instance));
         AccessibilityNodeInfo node = (AccessibilityNodeInfo) invoke(method(UiObject.class, "findAccessibilityNodeInfo", long.class), uiScrollable, 10 * 1000);
         Rect rect = new Rect();
         node.getBoundsInScreen(rect);
-        int downX = 0;
-        int downY = 0;
-        int upX = 0;
+        int viewHeight = rect.bottom - rect.top;
+        int scrollDefaultDistance = (int) (viewHeight * SCROLL_DISTANCE_RATIO);
+        int downX = rect.centerX();
+        int downY = rect.bottom - (viewHeight / SCROLL_THRESHOLD);
+        int upX = rect.centerX();
         int upY = 0;
-
-        // scrolling is by default assumed vertically unless the object is explicitly
-        // set otherwise by setAsHorizontalContainer()
-        int swipeAreaAdjust = (int) (rect.height() * 0.1);
-        // scroll vertically: swipe down -> up
-        downX = rect.centerX();
-        downY = rect.bottom - swipeAreaAdjust;
-        upX = rect.centerX();
-        upY = rect.top + swipeAreaAdjust;
-
-        InteractionController.getInstance().swipe(downX, downY, upX, upY, 5, true);
+        int scrollHeight = (int) (viewHeight * scrollScreenRatio);
+        if ((viewHeight / 2) > scrollHeight) {
+            upY = downY - scrollHeight;
+            InteractionController.getInstance().swipe(downX, downY, upX, upY, 10, true);
+        } else {
+            downY = rect.bottom - (viewHeight / SCROLL_THRESHOLD);
+            while(scrollHeight > 0) {
+                int distance = (scrollDefaultDistance > scrollHeight? scrollHeight : scrollDefaultDistance);
+                upY = downY - distance;
+                InteractionController.getInstance().swipe(downX, downY, upX, upY, 10, false);
+                scrollHeight = scrollHeight - distance;
+            }
+        }
     }
 }

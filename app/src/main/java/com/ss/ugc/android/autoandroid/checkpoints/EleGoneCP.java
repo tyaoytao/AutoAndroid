@@ -2,7 +2,7 @@ package com.ss.ugc.android.autoandroid.checkpoints;
 
 import android.support.test.uiautomator.UiObject;
 
-import com.ss.ugc.android.autoandroid.utils.Device;
+import com.ss.ugc.android.autoandroid.utils.DeviceUtils;
 
 import junit.framework.Assert;
 
@@ -29,19 +29,19 @@ public class EleGoneCP extends AbsCheckPoint<EleGoneCP.Argument> {
         UiObject element = null;
         switch (argument.method) {
             case "id":
-                Assert.assertEquals(Device.isNotExistElementByID(argument.value, argument.wait), true);
+                Assert.assertEquals(DeviceUtils.isNotExistElementByID(argument.value, argument.wait), true);
                 break;
             case "className":
-                Assert.assertEquals(Device.isNotExistElementByClassName(argument.value, argument.wait), true);
+                Assert.assertEquals(DeviceUtils.isNotExistElementByClassName(argument.value, argument.wait), true);
                 break;
             case "text":
-                Assert.assertEquals(Device.isNotExistElementByText(argument.value, argument.wait), true);
+                Assert.assertEquals(DeviceUtils.isNotExistElementByText(argument.value, argument.wait), true);
                 break;
             case "desc":
-                Assert.assertEquals(Device.isNotExistElementByDesc(argument.value, argument.wait), true);
+                Assert.assertEquals(DeviceUtils.isNotExistElementByDesc(argument.value, argument.wait), true);
                 break;
             case "parentId":
-                Assert.assertEquals(Device.isNotExistElementByParentID(argument.value, argument.child, argument.wait), true);
+                Assert.assertEquals(DeviceUtils.isNotExistElementByParentID(argument.value, argument.child, argument.wait), true);
                 break;
         }
         return true;
