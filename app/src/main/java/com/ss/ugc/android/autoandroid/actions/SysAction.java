@@ -1,5 +1,7 @@
 package com.ss.ugc.android.autoandroid.actions;
 
+import android.util.Log;
+
 import com.ss.ugc.android.autoandroid.utils.DeviceUtils;
 import com.ss.ugc.android.autoandroid.utils.UiScrollUtils;
 
@@ -39,6 +41,7 @@ public class SysAction extends AbsAction<SysAction.Argument>{
             case "stay":
                 DeviceUtils.stay(Integer.valueOf(argument.value));
                 break;
+
         }
     }
 }

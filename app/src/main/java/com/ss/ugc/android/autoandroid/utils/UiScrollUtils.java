@@ -28,7 +28,6 @@ public class UiScrollUtils {
     }
 
     public static void scrollDown(int instance, float scrollScreenRatio) throws UiObjectNotFoundException {
-        // uiScrollable.flingToEnd(1);
         UiScrollable uiScrollable = new UiScrollable(new UiSelector().scrollable(true).instance(instance));
         AccessibilityNodeInfo node = (AccessibilityNodeInfo) invoke(method(UiObject.class, "findAccessibilityNodeInfo", long.class), uiScrollable, 10 * 1000);
         Rect rect = new Rect();

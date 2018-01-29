@@ -58,7 +58,6 @@ public class SequenceParser {
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            //TODO 测试用例执行错误
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -2,6 +2,8 @@ package com.ss.ugc.android.autoandroid.actions;
 
 import android.support.test.uiautomator.UiObject2;
 import android.support.test.uiautomator.UiObjectNotFoundException;
+import android.support.test.uiautomator.Until;
+import android.util.Log;
 
 import com.ss.ugc.android.autoandroid.utils.DeviceUtils;
 
@@ -63,7 +65,8 @@ public class EleAction extends AbsAction<EleAction.Argument> {
                 element.longClick();
                 break;
             case "clickAndWaitForNewWindow":
-//                element.clickAndWaitForNewWindow(); //默认5500ms
+                element.clickAndWait(Until.newWindow(), 6000);
+                break;
         }
     }
 

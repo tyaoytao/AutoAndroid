@@ -1,7 +1,7 @@
 #/bin/bash
+#adb shell am start -n com.ss.android.ugc.live/.splash.LiveSplashActivity
 
 adb install -r ./AutoAndroid.apk
-
 
 adb shell am start -n com.ss.ugc.android.autoandroid/.MainActivity
 # 等待1秒，让权限申请的Activity启动并且申请权限
@@ -14,7 +14,7 @@ done
 
 adb push ./config.txt /sdcard/Download/
 
-adb shell am start -n com.ss.android.ugc.live/.splash.LiveSplashActivity
+adb shell am start -n $1
 # Lunch cpu_mem
 cd cpu_mem
 if [ ! -d ./reports ]; then
