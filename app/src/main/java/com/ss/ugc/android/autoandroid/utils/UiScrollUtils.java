@@ -15,7 +15,7 @@ import static com.ss.ugc.android.autoandroid.utils.ReflectionUtils.method;
  */
 
 public class UiScrollUtils {
-    private static final int SCROLL_THRESHOLD = 8; // Must lager than 2
+    private static final int SCROLL_THRESHOLD = 8; // Must larger than 2
     private static final float SCROLL_DISTANCE_RATIO = 1f - (1f / SCROLL_THRESHOLD) * 2f;
     static {
         DeviceUtils.getUiDevice();
@@ -39,7 +39,7 @@ public class UiScrollUtils {
         int upX = rect.centerX();
         int upY = 0;
         int scrollHeight = (int) (viewHeight * scrollScreenRatio);
-        if ((viewHeight / 2) > scrollHeight) {
+        if (scrollDefaultDistance > scrollHeight) {
             upY = downY - scrollHeight;
             InteractionController.getInstance().swipe(downX, downY, upX, upY, 10, true);
         } else {
