@@ -1,0 +1,462 @@
+#点击首页按钮
+action: ele_action: {"method": "parentId", "value":"android:id/tabs", "child":"0", "action": "click"}
+
+#停留3s
+action: sys_action: {"method": "stay", "value": "3000"}
+
+#点击直播tab
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/pager_sliding_tab_strip", "child":"0,0", "action": "click"}
+
+#检查直播tab下的排行榜是否出现 wait为等待时间
+cp: ele_exist: {"method":"id","value":"com.ss.android.ugc.live:id/rank_title", "wait":3000}
+
+#下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+#下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+#下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+#下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+#下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
+下滑
+action: sys_action: {"method": "slipDown", "value": "0,2"}
+
+#点击直播窗口进入直播间
+action: ele_action: {"method": "parentId", "value":"com.ss.android.ugc.live:id/feed_list", "child":"1", "action":"click"}
+
+#检查直播间关闭按钮是否出现
+cp: ele_exist: {"method": "id", "value": "com.ss.android.ugc.live:id/close", "wait":3000}
+
+#停留10s
+action: sys_action: {"method": "stay", "value": "10000"}
+
+#点击直播间的关闭按钮
+action: ele_action: {"method": "id", "value":"com.ss.android.ugc.live:id/close", "action":"clickAndWaitForNewWindow"}
+
